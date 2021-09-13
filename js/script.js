@@ -119,38 +119,6 @@ const colors ={
 }
 
 
-
-// Milestone 1
-// Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
-// for(let i=0; i<icons.length;i++){
-    
-//     document.getElementById("card-container").innerHTML += `
-//     <div class="card-content">
-//         <i class="${icons[i].family} ${icons[i].prefix}${icons[i].name}">
-//     </i><div class="name">fa-name</div></div>
-//     `
-// }
-icons.forEach(
-    (element)=>{
-        // destructuring
-        const{name,family,prefix}=element;
-
-        // inner html concatenation
-        document.getElementById("card-container").innerHTML += `
-        <div class="card-content">
-            <i class="${family} ${prefix}${name}">
-        </i><div class="name">${name}</div></div>
-        ` 
-    }
-);
-
-
-// Milestone 2
-// Coloriamo le icone per tipo
-// per fare ciò utilizziamo il metodo map per andare a generare un nuovo array,
-// che conterrà le nostre carte, e i colori associati alle diverse categorie
-
-
 const colorizedIcons = icons.map(
     (element) => {
         return{
@@ -168,3 +136,34 @@ const colorizedIcons = icons.map(
     }
 );
 console.log(colorizedIcons);
+
+// Milestone 1
+// Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
+// for(let i=0; i<icons.length;i++){
+    
+//     document.getElementById("card-container").innerHTML += `
+//     <div class="card-content">
+//         <i class="${icons[i].family} ${icons[i].prefix}${icons[i].name}">
+//     </i><div class="name">fa-name</div></div>
+//     `
+// }
+colorizedIcons.forEach(
+    (element)=>{
+        // destructuring
+        const{name,family,prefix,color}=element;
+
+        // inner html concatenation
+        document.getElementById("card-container").innerHTML += `
+        <div class="card-content">
+            <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
+            <div class="name">${name}</div></div>
+        ` 
+    }
+);
+
+
+// Milestone 2
+// Coloriamo le icone per tipo
+// per fare ciò utilizziamo il metodo map per andare a generare un nuovo array,
+// che conterrà le nostre carte, e i colori associati alle diverse categorie
+
