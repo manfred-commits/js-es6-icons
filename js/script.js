@@ -112,7 +112,24 @@ const icons = [
 
 // Milestone 1
 // Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
-for(let i=0; i<icons.length;i++){
+// for(let i=0; i<icons.length;i++){
     
-    document.getElementById("card-container").innerHTML += `<div class="card-content"><i class="${icons[i].family} ${icons[i].prefix}${icons[i].name}"></i><div class="name">fa-name</div></div>`
-}
+//     document.getElementById("card-container").innerHTML += `
+//     <div class="card-content">
+//         <i class="${icons[i].family} ${icons[i].prefix}${icons[i].name}">
+//     </i><div class="name">fa-name</div></div>
+//     `
+// }
+icons.forEach(
+    (element)=>{
+        // destructuring
+        const{name,family,prefix}=element;
+
+        // inner html concatenation
+        document.getElementById("card-container").innerHTML += `
+        <div class="card-content">
+            <i class="${family} ${prefix}${name}">
+        </i><div class="name">${name}</div></div>
+        ` 
+    }
+);

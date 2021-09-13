@@ -41,7 +41,7 @@ main{
     padding: 10px;
     width: 100%;
     height: calc(100vh - 20vh);
-
+    overflow-y: auto;
 }
 .container-cards{
     display: grid;
@@ -52,12 +52,20 @@ main{
     justify-content: start;
     height: 90%;
     width: 100%;
-    gap: 10px;
+    gap: 20px;
 }
 .card-content{
     background-color: white;
     padding: 5px;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;    
     
+}
+.card-content i{
+    width: 100%;
+    text-align: center;
 }
 /* /main section */
