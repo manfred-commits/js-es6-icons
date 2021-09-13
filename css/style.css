@@ -33,3 +33,31 @@
     display: flex;
 }
 /* /nav section */
+
+
+/* main section */
+main{
+    background-color: lightgrey;
+    padding: 10px;
+    width: 100%;
+    height: calc(100vh - 20vh);
+
+}
+.container-cards{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
+
+    align-content: center;
+    justify-content: start;
+    height: 90%;
+    width: 100%;
+    gap: 10px;
+}
+.card-content{
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+/* /main section */
