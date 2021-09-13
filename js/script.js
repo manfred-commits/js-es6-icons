@@ -118,7 +118,7 @@ const colors ={
     beverage:"yellow"
 }
 
-const iconsCategories=[];
+
 
 
 
@@ -173,22 +173,40 @@ colorizedIcons.forEach(
 // Milestone 3
 // Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 
+const iconsCategories=[];
+
 const select =document.getElementById("selection");
 
-// questo codice genera una select che conterra le categorie delle icone
-
-iconsCategories.forEach(
-
-    (element) =>{
-        select.innerHTML+= `<option value="${element}">${element}</option>`;
-    }
-);
 
 
 
 // inizializziamo un nuovo oggetto che conterrà le possibili categorie di carte, nella sezione variabili
 // questo sarà generato, filtrando per le categorie presenti all'interno dell'array che contiene le nostre carte,
 // prendendosi cura di prendere le categorie SOLO una volta.
+
+
+// questo codice riempie iconsCategories
+colorizedIcons.forEach(
+    (element) => {
+        if(!iconsCategories.includes(element.category)){
+            iconsCategories.push(element.category);
+        }
+    }
+);
+
+
+// questo codice si occupa di stampare le nostre options
+iconsCategories.forEach(
+
+    (element) =>{
+        select.innerHTML += `<option value="${element}">${element}</option>`;
+    }
+);
+
+
+
+
 // Inoltre:considerando che la select dovrà cambiare le nostre icone utiliziamo un event listener
+// questo codice genera una select che conterra le categorie delle icone
 
 
