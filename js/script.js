@@ -118,6 +118,14 @@ const colors ={
     beverage:"yellow"
 }
 
+const iconsCategories=[];
+
+
+
+// Milestone 2
+// Coloriamo le icone per tipo
+// per fare ciò utilizziamo il metodo map per andare a generare un nuovo array,
+// che conterrà le nostre carte, e i colori associati alle diverse categorie
 
 const colorizedIcons = icons.map(
     (element) => {
@@ -162,8 +170,25 @@ colorizedIcons.forEach(
 );
 
 
-// Milestone 2
-// Coloriamo le icone per tipo
-// per fare ciò utilizziamo il metodo map per andare a generare un nuovo array,
-// che conterrà le nostre carte, e i colori associati alle diverse categorie
+// Milestone 3
+// Creiamo una select con i tipi di icone e usiamola per filtrare le icone
+
+const select =document.getElementById("selection");
+
+// questo codice genera una select che conterra le categorie delle icone
+
+iconsCategories.forEach(
+
+    (element) =>{
+        select.innerHTML+= `<option value="${element}">${element}</option>`;
+    }
+);
+
+
+
+// inizializziamo un nuovo oggetto che conterrà le possibili categorie di carte, nella sezione variabili
+// questo sarà generato, filtrando per le categorie presenti all'interno dell'array che contiene le nostre carte,
+// prendendosi cura di prendere le categorie SOLO una volta.
+// Inoltre:considerando che la select dovrà cambiare le nostre icone utiliziamo un event listener
+
 
