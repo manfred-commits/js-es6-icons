@@ -210,3 +210,33 @@ iconsCategories.forEach(
 // questo codice genera una select che conterra le categorie delle icone
 
 
+select.addEventListener('change',
+    function(){
+
+        const filteredIcons = colorizedIcons.filter(
+            (element) => {
+                
+                if(select.value=="" || element.category == select.value){
+                    return true;
+                }
+                return false;
+            }
+        );
+        
+        document.getElementById("card-container").innerHTML = "";
+        filteredIcons.forEach(
+            (element)=>{
+                // destructuring
+                const{name,family,prefix,color}=element;
+        
+                // inner html concatenation
+                document.getElementById("card-container").innerHTML += `
+                <div class="card-content">
+                    <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
+                    <div class="name">${name}</div></div>
+                ` 
+            }
+        );
+
+    }
+);
