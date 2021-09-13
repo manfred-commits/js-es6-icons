@@ -110,6 +110,16 @@ const icons = [
 	},
   ];
 
+
+//   inizializzo una oggetto colori per le varie tipologie
+const colors ={
+    food:"pink",
+    animal:"green",
+    beverage:"yellow"
+}
+
+
+
 // Milestone 1
 // Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
 // for(let i=0; i<icons.length;i++){
@@ -133,3 +143,28 @@ icons.forEach(
         ` 
     }
 );
+
+
+// Milestone 2
+// Coloriamo le icone per tipo
+// per fare ciò utilizziamo il metodo map per andare a generare un nuovo array,
+// che conterrà le nostre carte, e i colori associati alle diverse categorie
+
+
+const colorizedIcons = icons.map(
+    (element) => {
+        return{
+            "name":element.name,
+            "family":element.family,
+            "prefix":element.prefix,
+            "category":element.category,
+
+            // crea la keyword colors nell'oggetto, prendendo come argomento della keyboard il valore della
+            // associato alla categoria dei singoli oggetti, che corrisponde a sua volta alla keyword specifica in 
+            // colori. Cosa che associa il singolo colore specifico a seconda della categoria, nel nuovo array generato
+            color: colors[element.category]
+
+        }
+    }
+);
+console.log(colorizedIcons);
