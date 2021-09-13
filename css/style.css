@@ -2,4 +2,34 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
 }
+
+.container-page{
+    height: 100vh;
+}
+/* title section */
+
+.title-section{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.title-section h1#page-title{
+    padding: 5px;
+    font-family: 'Acme', sans-serif;
+    color: #29b1dd;
+}
+/* /title section */
+
+/* nav section */
+.nav-formatting{
+    background-color: #29b1dd;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+/* /nav section */
