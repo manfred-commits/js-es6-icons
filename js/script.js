@@ -317,6 +317,8 @@ btnAddIcon.addEventListener('click',
 
 		console.log(newIcon);
 
+		colors[newIcon.category] = newIcon.color;
+
 		// inserisco il nuovo oggetto nel array che contiene le icone colorate
 		colorizedIcons.push(newIcon);
 
