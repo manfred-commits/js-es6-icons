@@ -317,6 +317,32 @@ btnAddIcon.addEventListener('click',
 
 		console.log(newIcon);
 
+		// inserisco il nuovo oggetto nel array che contiene le icone colorate
+		colorizedIcons.push(newIcon);
+
+		console.log(iconsCategories);
+
+		// resetto il contenitore dell'icone cosi da non avere ripetizione al pritn del nuovo oggetto
+
+		document.getElementById("card-container").innerHTML = "";
+
+
+		// stampo l'array di oggetti colorizedIcons, con il nuovo oggetto di categoria possibilmente diversa.
+
+		colorizedIcons.forEach(
+			(element)=>{
+				// destructuring
+				const{name,family,prefix,color}=element;
+		
+				// inner html concatenation
+				document.getElementById("card-container").innerHTML += `
+				<div class="card-content">
+					<i class="${family} ${prefix}${name}" style="color: ${color}"></i>
+					<div class="name">${name}</div></div>
+				` 
+			}
+		);
+		
 		
 
 
