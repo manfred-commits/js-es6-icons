@@ -301,7 +301,22 @@ btnAddIcon.addEventListener('click',
 		console.log(newIcon);
 
 		
+		// verifico, se la condizione  iconsCategories.includes(newIcon.category) è falsa. In caso lo è genero la proprietà colore per l'oggetto newIcon e assegno un nuovo colore alla nuova categoria. In caso la categoria è inclusa, assegno alla new Icon, la proprietà colore, per come fatto finora colors[newIcon.category].
 		
+		if(iconsCategories.includes(newIcon.category) == false) {
+
+            newIcon.color = "#ff0000;";
+			iconsCategories.push(newIcon.category);
+
+
+        }else{
+
+            newIcon.color = colors[newIcon.category]
+
+        }
+
+		console.log(newIcon);
+
 		
 
 
