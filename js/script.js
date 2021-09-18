@@ -125,6 +125,29 @@ function getRandomColor() {
 	return color;
   }
 
+
+
+
+// funzione che stampa un array di icone
+function printIcon(array,containerId){
+
+	array.forEach(
+		(element)=>{
+			// destructuring
+			const{name,family,prefix,color}=element;
+	
+			// inner html concatenation
+			document.getElementById(containerId).innerHTML += `
+			<div class="card-content">
+				<i class="${family} ${prefix}${name}" style="color: ${color}"></i>
+				<div class="name">${name}</div></div>
+			` 
+		}
+	);
+
+}
+
+
 // /SEZIONE FUNZIONI
 
 
@@ -138,13 +161,13 @@ function getRandomColor() {
 
 
 //   inizializzo un oggetto colori per le varie tipologie
-const colors ={
+const colors = {
     food:"pink",
     animal:"green",
     beverage:"yellow"
 }
 
-
+const idContainerIcons="card-container";
 
 
 
@@ -181,20 +204,24 @@ console.log(colorizedIcons);
 //     </i><div class="name">fa-name</div></div>
 //     `
 // }
-colorizedIcons.forEach(
-    (element)=>{
-        // destructuring
-        const{name,family,prefix,color}=element;
 
-        // inner html concatenation
-        document.getElementById("card-container").innerHTML += `
-        <div class="card-content">
-            <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
-            <div class="name">${name}</div></div>
-        ` 
-    }
-);
 
+// soluzione con print in versione per esteso senza funzione specifica
+// colorizedIcons.forEach(
+//     (element)=>{
+//         // destructuring
+//         const{name,family,prefix,color}=element;
+
+//         // inner html concatenation
+//         document.getElementById("card-container").innerHTML += `
+//         <div class="card-content">
+//             <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
+//             <div class="name">${name}</div></div>
+//         ` 
+//     }
+// );
+
+printIcon(colorizedIcons,idContainerIcons);
 
 // Milestone 3
 // Creiamo una select con i tipi di icone e usiamola per filtrare le icone
@@ -249,20 +276,28 @@ select.addEventListener('change',
             }
         );
         
-        document.getElementById("card-container").innerHTML = "";
-        filteredIcons.forEach(
-            (element)=>{
-                // destructuring
-                const{name,family,prefix,color}=element;
+
+		// reset del container per evitare ripetizione di icone dovute alla concatenazione nella funzione print
+        document.getElementById(idContainerIcons).innerHTML = "";
+
+		// soluzione con print in versione per esteso senza funzione specifica
+        // filteredIcons.forEach(
+        //     (element)=>{
+        //         // destructuring
+        //         const{name,family,prefix,color}=element;
         
-                // inner html concatenation
-                document.getElementById("card-container").innerHTML += `
-                <div class="card-content">
-                    <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
-                    <div class="name">${name}</div></div>
-                ` 
-            }
-        );
+        //         // inner html concatenation
+        //         document.getElementById("card-container").innerHTML += `
+        //         <div class="card-content">
+        //             <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
+        //             <div class="name">${name}</div></div>
+        //         ` 
+        //     }
+        // );
+
+
+		printIcon(filteredIcons,idContainerIcons);
+
 
     }
 );
@@ -357,19 +392,7 @@ btnAddIcon.addEventListener('click',
 
 		// stampo l'array di oggetti colorizedIcons, con il nuovo oggetto di categoria possibilmente diversa.
 
-		colorizedIcons.forEach(
-			(element)=>{
-				// destructuring
-				const{name,family,prefix,color}=element;
-		
-				// inner html concatenation
-				document.getElementById("card-container").innerHTML += `
-				<div class="card-content">
-					<i class="${family} ${prefix}${name}" style="color: ${color}"></i>
-					<div class="name">${name}</div></div>
-				` 
-			}
-		);
+		printIcon(colorizedIcons,idContainerIcons);
 		
 		// resetto la mia select 
 		
