@@ -185,7 +185,7 @@ const select =document.getElementById("selection");
 // prendendosi cura di prendere le categorie SOLO una volta.
 
 
-// questo codice riempie iconsCategories
+// questo codice riempie iconsCategories 
 colorizedIcons.forEach(
     (element) => {
         if(!iconsCategories.includes(element.category)){
@@ -240,3 +240,36 @@ select.addEventListener('change',
 
     }
 );
+
+
+// BONUS  
+
+// estraggo modal
+let modal = document.getElementById("myModal");
+
+// estraggo il bottone che apre la modal
+let btn = document.getElementById("myBtn");
+
+// estraggo l'elemento <span>  che chiude la modal
+let span = document.getElementsByClassName("close")[0];
+
+// inizializzo l'apertura della modal, al click dell'user
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// inizializzo la chiusura della modal, al click dell'user, nell'elemento <span> (x)
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// inizializzo la chiusura della modal, al click all'esterno della modal, da parte dell'utente
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
