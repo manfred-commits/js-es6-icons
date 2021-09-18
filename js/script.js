@@ -131,7 +131,13 @@ function getRandomColor() {
 
 
 
-//   inizializzo una oggetto colori per le varie tipologie
+
+
+// SEZIONE CODICE PRINCIPALE
+
+
+
+//   inizializzo un oggetto colori per le varie tipologie
 const colors ={
     food:"pink",
     animal:"green",
@@ -193,7 +199,7 @@ colorizedIcons.forEach(
 // Milestone 3
 // Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 
-const iconsCategories=[];
+const iconsCategories=[""];
 
 const select =document.getElementById("selection");
 
@@ -382,3 +388,5 @@ btnAddIcon.addEventListener('click',
 
 	}
 );
+
+// /SEZIONE CODICE PRINCIPALE
