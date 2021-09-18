@@ -273,3 +273,27 @@ window.onclick = function(event) {
 
 
 
+// inizializzo le variabili che andranno ad essere inserite e prese dall'utente
+
+let inputName = document.getElementById("aggiungiNome");
+
+let inputSelectFamily = document.getElementById("aggiungiFamiglia");
+
+let inputSelectPrefix = document.getElementById("addPrefisso");
+
+let inputCategory = document.getElementById("aggiungiCategoria");
+
+
+// inizializzo l'evento click, che prenderà le informazioni dell'utente
+
+btnAddIcon= document.getElementById("aggiungi");
+
+btnAddIcon.addEventListener('click',
+    function(){
+		
+		
+		
+
+
+	}
+);
