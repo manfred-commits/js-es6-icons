@@ -22,7 +22,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
         <!-- /link font standard -->
         
-        <title>Document</title>
+        <title>FontIcons</title>
     </head>
     <body>
         <div class="container-page">
@@ -35,7 +35,45 @@
                     <select name="selection" id="selection">
                         <option value=""></option>
                     </select>
+
+                    <!-- MODAL SECTION -->
+
+                    <!-- btn che apre la Modal -->
+                    <button id="myBtn">Aggiungi un'icona</button>
+
+                    <!-- Modal container-->
+                    <div id="myModal" class="modal">
+
+                        <!-- CONTENUTO Modal  -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+
+                            <p>Inserisci i dati dell'icona che vuoi generare</p>
+
+                            <input type="text" name="nome" id="aggiungiNome" placeholder="Inserisci nome icona">
+                            <select name="famiglia" id="aggiungiFamiglia">
+                                <option value="" selected disabled hidden>Scegli la famiglia dell'icona</option>
+                                <option value="fab">fab</option>
+                                <option value="fas">fas</option>
+                            </select>
+
+                            <select name="prefisso" id="addPrefisso">
+                                <option value="" selected disabled hidden>Aggiungi il prefisso</option>
+                                <option value="fa-" >fa-</option>
+                            </select>
+                            <input type="text" name="categoria" id="aggiungiCategoria" placeholder="Scegli una categoria">
+                            
+                            <button id="aggiungi">Aggiungi</button>
+
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- /Modal container-->
                     
+                    
+                    <!-- /MODAL SECTION -->
+
                 </nav>
 
             </header>
