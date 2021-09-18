@@ -291,6 +291,16 @@ btnAddIcon= document.getElementById("aggiungi");
 btnAddIcon.addEventListener('click',
     function(){
 		
+		// inizializzo l'oggetto con i campi generati dall'utente
+		const newIcon={
+			"name": inputName.value,
+            "family": inputSelectFamily.value,
+            "prefix": inputSelectPrefix.value,
+            "category": inputCategory.value,
+		}
+		console.log(newIcon);
+
+		
 		
 		
 
