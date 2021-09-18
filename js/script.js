@@ -343,6 +343,18 @@ btnAddIcon.addEventListener('click',
 			}
 		);
 		
+		// resetto la mia select 
+		
+		select.innerHTML = "";
+
+		// stampo nuovamente la mia select per includere una nuova categoria, ove generata. 
+
+		iconsCategories.forEach(
+
+			(element) =>{
+				select.innerHTML += `<option value="${element}">${element}</option>`;
+			}
+		);
 		
 
 
