@@ -111,6 +111,26 @@ const icons = [
   ];
 
 
+
+// SEZIONE FUNZIONI
+
+
+// questa funzione genera colori in modo random 
+function getRandomColor() {
+	let letters = '0123456789ABCDEF';
+	let color = '#';
+	for (let i = 0; i < 6; i++) {
+	  color += letters[Math.floor(Math.random() * 16)];
+	}
+	return color;
+  }
+
+// /SEZIONE FUNZIONI
+
+
+
+
+
 //   inizializzo una oggetto colori per le varie tipologie
 const colors ={
     food:"pink",
@@ -305,7 +325,7 @@ btnAddIcon.addEventListener('click',
 		
 		if(iconsCategories.includes(newIcon.category) == false) {
 
-            newIcon.color = "#ff0000;";
+            newIcon.color = getRandomColor();
 			iconsCategories.push(newIcon.category);
 
 
